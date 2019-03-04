@@ -1,9 +1,19 @@
-
-
 //Tests if group name is valid
 function groupNameValid(name){
   if (typeof name === "string" && name.length <= 50) {
     return true;
   }
   return false;
+}
+
+//Sends new group info to get added to the server
+//TODO Swap else into if and then remove else
+function addGroup(newGroup, owner = "default", visibility = false){
+  if (groupNameValid(newGroup)) {
+    //send to server
+  }
+  else {
+    const errorBox = document.getElementById('error');
+    errorBox.textContent = "Please ensure you enter text content under the length of 50 characters";
+  }
 }
