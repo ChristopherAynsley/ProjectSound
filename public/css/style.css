@@ -18,3 +18,11 @@
 body{
   background-color: LightGrey;
 }
+
+.signstyle{
+  text-align: centre;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 150%;
+  color: DarkGrey;
+}
