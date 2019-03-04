@@ -1,30 +1,43 @@
+-- database setup for mysql
 
-
+create user asianjim@localhost identified by 'dootdoot';
 create database soundsync_db;
+grant all privileges on soundsync_db.* to asianjim@localhost;
+use soundsync_db;
 
-create table user (
+drop table if exists user;
+drop table if exists song;
+drop table if exists sheet_music;
+drop table if exists comments;
+
+create table if not exists User (
   user_id int auto_increment primary key ,
   user_name varchar(30) not null
 );
 
-create table song (
+create table if not exists Song (
   song_id int auto_increment primary key ,
-  song_name varchar(30) not null
+  song_name varchar(30) not null ,
+  song_file_path varchar(50) not null
 );
 
-create table sheet_music(
+create table if not exists Sheet_Music(
   sheet_music_id int auto_increment primary key ,
-  sheet_music_name varchar(30) not null
+  sheet_music_name varchar(30) not null ,
+  sheet_music_file_path varchar(50) not null
 );
 
-create table comments (
+-- error when adding this table - related to foriegn key assignment
+create table if not exists Comments (
   comments_id int(10)  primary key ,
   comments_text text not null ,
   comments_date_posted datetime not null ,
   comments_posted_by int not null ,
   song_comments_posted_to int not null ,
   sheet_music_comments_posted_to int not null ,
-  foreign key(comments_posted_by) from  user(user_id) ,
-  foreign key(song_comments_posted_to) from song(song_id) ,
-  foreign key(sheet_music_comments_posted_to) from sheet_music(sheet_music_id)
+  foreign key(comments_posted_by) from  User(user_id) ,
+  foreign key(song_comments_posted_to) from Song(song_id) ,
+  foreign key(sheet_music_comments_posted_to) from Sheet_Music(sheet_music_id)
 );
+
+-- add sample data here
