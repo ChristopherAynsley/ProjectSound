@@ -17,3 +17,10 @@ function addGroup(newGroup, owner = "default", visibility = false){
     errorBox.textContent = "Please ensure you enter text content under the length of 50 characters";
   }
 }
+
+//Sends a group name to the server to search for groups
+function searchPublicGroups(groupName){
+  if (!groupNameValid(groupName)) {
+    //TODO finish this
+  }
+}
