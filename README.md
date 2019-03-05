@@ -31,28 +31,28 @@ destroy the vm and rebuild it when i f* everything up))
 
 1. install curl for new packages `apt-get install curl`
 
-2. do 'curl -sL https://deb.nodesource.com/setup_10.x | bash -'
-then 'apt-get install -y nodejs'
+2. do `curl -sL https://deb.nodesource.com/setup_10.x | bash -`
+then `apt-get install -y nodejs`
 
-3. install mysql server 'apt-get install mysql-server'
+3. install mysql server `apt-get install mysql-server`
 
-4. install git 'apt-get install git'
+4. install git `apt-get install git`
 
 5. Download or clone the source code for the server into a location of your
 choosing
-'git clone -b proto https://github.com/C-Porter/ProjectSound.git'
+`git clone -b proto https://github.com/C-Porter/ProjectSound.git`
 
-6. Enter the project folder 'cd ProjectSound'
+6. Enter the project folder `cd ProjectSound`
 
-7. install the package dependencies 'npm install'
+7. install the package dependencies `npm install`
 
 8. set up the mysql server
 8.1. open db.sql in the local repo
 8.2. copy contents
-8.3. in terminal 'mysql -y root -p'
+8.3. in terminal `mysql -y root -p`
 8.4. paste contents into terminal and hit enter, should create db + tables
-8.5. exit db 'exit'
+8.5. exit db `exit`
 
-9. start the server 'node server.js'
-should see the response 'Server started, listening on port 8080' and
-'Database connected succesfully'
+9. start the server `node server.js`
+should see the response `Server started, listening on port 8080` and
+`Database connected succesfully` in terminal
