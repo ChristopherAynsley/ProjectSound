@@ -1,10 +1,6 @@
 //Tests if group name is valid
 function groupNameValid(name){
-  if (typeof name === "string" && name.length <= 50) {
-    return true;
-  }
-  return false;
-}
+  return (typeof name === "string" && name.length <= 50)
 
 //Sends new group info to get added to the server
 //TODO Swap else into if and then remove else
