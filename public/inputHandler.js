@@ -20,3 +20,5 @@ function searchPublicGroups(groupName){
     //TODO finish this
   }
 }
+
+module.exports.groupNameValid = groupNameValid
