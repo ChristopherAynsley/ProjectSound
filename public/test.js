@@ -1,6 +1,9 @@
+import * as handlers from "inputHandler"
+QUnit.test( "groupNameValid",
+  function(){
+    QUnit.ok(
+      !handlers.groupNameValid("aopkdepaokepaokdkpeokdpeoakdpokapokdpoaekdoepkpoqkepoqk"),
+      "Passed!"
+      )
 
-let nameFunc = require('public.inputHandler.groupNameValid')
-
-QUnit.test( "groupNameValid", function() {
-equals(nameFunc("aopkdepaokepaokdkpeokdpeoakdpokapokdpoaekdoepkpoqkepoqk"),false,  "Passed!" );
-});
+})
