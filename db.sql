@@ -27,7 +27,7 @@ create table if not exists Sheet_Music(
   sheet_music_file_path varchar(50) not null
 );
 
--- error when adding this table - related to foriegn key assignment
+
 create table if not exists Comments (
   comments_id int(10)  primary key ,
   comments_text text not null ,
