@@ -14,13 +14,19 @@ const config = require('./config.js');
 
 const app = express();
 const con = mysql.createConnection(config.mysql);
+const GoogleAuth = require('simple-google-openid');
+
+/* Requires a GOOGLE_CLIENT_ID
+app.use(GoogleAuth(process.env.GOOGLE_CLIENT_ID));
+app.use('/api', GoogleAuth.guardMiddleware());
+*/
 
 con.connect(function(err) {
   if (err) throw err;
   console.log("Database connected succesfully")
 });
 
-app.get('/', (req, res) => res.send('Hello World!'));
+//app.get('/', (req, res) => res.send('Hello World!'));
 
 app.use(express.static("public"));
 app.use(express.static("public/pages"));

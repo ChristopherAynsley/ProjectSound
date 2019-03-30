@@ -24,7 +24,6 @@ The system provides the following functionality:
  - `db.sql` - sql commands for setting up the database
  - `package.json` - package info and dependencies
  - `server.js` - js code for server
- - `test.js` - js QUnit tests
 
 ### Installation and setup (for debian vm incase anyone wants to do this)
 (server is built + deployed on a debian 9.8.0 amd64 vm (its easy to
