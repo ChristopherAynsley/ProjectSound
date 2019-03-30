@@ -27,17 +27,14 @@ create table if not exists Sheet_Music(
   sheet_music_file_path varchar(50) not null
 );
 
--- error when adding this table - related to foriegn key assignment
+
 create table if not exists Comments (
   comments_id int(10)  primary key ,
   comments_text text not null ,
   comments_date_posted datetime not null ,
-  comments_posted_by int not null ,
-  song_comments_posted_to int not null ,
-  sheet_music_comments_posted_to int not null ,
-  foreign key(comments_posted_by) from  User(user_id) ,
-  foreign key(song_comments_posted_to) from Song(song_id) ,
-  foreign key(sheet_music_comments_posted_to) from Sheet_Music(sheet_music_id)
+  comments_posted_by int not null references User(user_id),
+  song_comments_posted_to int not null references Song(song_id),
+  sheet_music_comments_posted_to int not null references Sheet_Music(sheet_music_id),
 );
 
 -- add sample data here
