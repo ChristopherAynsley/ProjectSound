@@ -1,4 +1,3 @@
-
 /*
  * project sound Server
  *
@@ -24,4 +23,7 @@ con.connect(function(err) {
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.use(express.static("public"));
-app.listen(config.port, () => console.log(`Server started, listening on port ` + config.port));
+app.use(express.static("public/pages"));
+
+app.listen(config.port, () => console.log(`Server started, listening on port ` +
+  config.port));
