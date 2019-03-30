@@ -1,22 +1,7 @@
-
-
-.centerimage {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 20%;
-}
-
-.center{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 400%;
-  color: gray;
-}
-
 body{
   background-color: LightGrey;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .signstyle{
@@ -25,4 +10,11 @@ body{
   margin-right: auto;
   font-size: 150%;
   color: DarkGrey;
+}
+
+.centreimage{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
 }
