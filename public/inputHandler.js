@@ -40,5 +40,29 @@ function handleFiles(file) {
   //TODO Send file to server and location of file to be placed ect ect
 }
 
+//TEST FUNCTION Gets the image and then displays the image on the page
+async function displayImage() {
+  let request = await fetch("../media/soundsync.png");
+  let location = document.getElementById("picholder");
+  let imageELe = new Image();
+  imageELe.className = 'testimage';
+  location.appendChild(imageELe);
+  imageELe.src = request.url;
+}
+
+// TEST FUNCTION to get data from server ect ect 
+async function doFetch(url, intervalToCancel) {
+  try {
+    let resp = await fetch(url);
+    if (!resp.ok) throw new Error('error');
+    return await resp.json();
+  } catch (e) {
+    console.error('error fetching ', url);
+    console.error('refresh page to try again');
+    clearInterval(intervalToCancel);
+    return null;
+  }
+}
+
 window.onload = init;
 //module.exports.groupNameValid = groupNameValid;
