@@ -50,7 +50,7 @@ async function displayImage() {
   imageELe.src = request.url;
 }
 
-// TEST FUNCTION to get data from server ect ect 
+// TEST FUNCTION to get data from server ect ect
 async function doFetch(url, intervalToCancel) {
   try {
     let resp = await fetch(url);
@@ -62,6 +62,27 @@ async function doFetch(url, intervalToCancel) {
     clearInterval(intervalToCancel);
     return null;
   }
+}
+
+
+//Post a single image
+async function postImage(image) {
+  // TODO: Once pages built a little more, make location a variable passed into the function
+  let location = document.getElementById("picholder");
+  let imageELe = new Image();
+  imageELe.className = 'testimage';
+  location.appendChild(imageELe);
+  imageELe.src = ("../media/groupimages" + image);
+}
+
+//Posts all images in imagelist utilising postImage function
+async function postAllImages() {
+  let resp = await fetch("/imagelist");
+  let allImages = await resp.json();
+  allImages.forEach(image => {
+    postImage(image);
+  })
+  console.log(x);
 }
 
 window.onload = init;
