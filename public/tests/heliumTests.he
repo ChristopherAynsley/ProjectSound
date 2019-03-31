@@ -1,0 +1,13 @@
+#Visual tests using helium
+#Requires helium to be unzipped and in same directory to run
+start_chrome()
+go_to("http://localhost:8080/index.html")
+if Text("Log In").exists():
+    print("Page exists")
+    click(Button("Login"))
+    if Text("Username").exists():
+        print("Login box found")
+    else:
+        print("No login displayed")
+else:
+    print ("No page found")
