@@ -34,7 +34,7 @@ body{
 
   list-style-type: none;
   margin: 0;
-  margin-left: 70%;
+  margin-left: 60%;
   padding: 0;
   height: auto;
   background-color: #898282;
@@ -63,5 +63,5 @@ body{
 
 #welcome{
   font-size: 130%
-  
+
 }
