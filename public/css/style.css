@@ -1,20 +1,67 @@
 body{
   background-color: LightGrey;
+  margin-top: 2%;
   margin-left: 15%;
   margin-right: 15%;
 }
 
 .signstyle{
+  display: block;
   text-align: centre;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 35%;
+  margin-right: 35%;
   font-size: 150%;
-  color: DarkGrey;
 }
 
 .centreimage{
   display: block;
+  margin-top: 15%;
+  margin-bottom: 5%;
   margin-left: auto;
   margin-right: auto;
-  width: 30%;
+  width: 40%;
+}
+
+.logosmall{
+  display: block;
+  margin-bottom: 5%;
+  width: 15%;
+}
+
+
+
+.ulNavigation {
+
+  list-style-type: none;
+  margin: 0;
+  margin-left: 70%;
+  padding: 0;
+  height: auto;
+  background-color: #898282;
+  position: fixed;
+  width: auto;
+  display: inline;
+  border: 2px solid #555;
+}
+
+.liNavigationItem {
+  display: inline-block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.liNavigationItem.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.liNavigationItem:hover:not(.active) {
+  background-color: 898282;
+  color: white;
+}
+
+#welcome{
+  font-size: 130%
+  
 }
