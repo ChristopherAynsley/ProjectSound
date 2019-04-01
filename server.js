@@ -11,6 +11,7 @@ const mysql = require('mysql');
 const express = require('express');
 const fs = require('fs');
 const imagestore = ("./public/media/groupimages/");
+const audiostore = ("./public/media/music/");
 
 const config = require('./config.js');
 
@@ -34,6 +35,7 @@ app.use(express.static("public"));
 app.use(express.static("public/pages"));
 
 app.get('/imagelist', images);
+app.get('/audiolist', songs);
 
 app.listen(config.port, () => console.log(`Server started, listening on port ` +
   config.port));
@@ -49,5 +51,16 @@ function images(req, res) {
     console.log(imageArray);
     res.send(imageArray);
   });
+}
 
+function songs(req, res) {
+  let audioArray = [];
+  fs.readdir(audiostore, (err, files) => {
+    files.forEach(file => {
+      console.log(file);
+      audioArray.push(file);
+    });
+    console.log(audioArray);
+    res.send(audioArray);
+  });
 }
