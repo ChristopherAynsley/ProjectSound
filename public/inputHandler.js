@@ -66,13 +66,13 @@ async function doFetch(url, intervalToCancel) {
 
 
 //Post a single image
-async function postImage(image) {
+function postImage(image) {
   // TODO: Once pages built a little more, make location a variable passed into the function
   let location = document.getElementById("picholder");
   let imageELe = new Image();
   imageELe.className = 'testimage';
   location.appendChild(imageELe);
-  imageELe.src = ("../media/groupimages" + image);
+  imageELe.src = ("../media/groupimages/" + image);
 }
 
 //Posts all images in imagelist utilising postImage function
@@ -81,9 +81,29 @@ async function postAllImages() {
   let allImages = await resp.json();
   allImages.forEach(image => {
     postImage(image);
-  })
-  console.log(x);
+  });
 }
+
+//Posts a single audio track to the page
+function postSong(song, locationid){
+  let location = document.getElementById(locationid);
+  let audioEle = new Audio();
+  audioEle.controls = 'controls';
+  audioEle.src = ("../media/music/" + song);
+  location.appendChild(audioEle);
+}
+
+//Posts all audio tracks available using the postSong function
+async function postAllMusic(loc) {
+  let resp = await fetch("/audiolist");
+  let allMusic = await resp.json();
+  allMusic.forEach(song => {
+    postSong(song, loc);
+  });
+}
+
+
+
 
 window.onload = init;
 //module.exports.groupNameValid = groupNameValid;
