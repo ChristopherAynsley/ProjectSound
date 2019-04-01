@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <script src="../inputHandler.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="431475853768-3vv33qi2jtsjsmvppbl0kmgnkjdtqfsp.apps.googleusercontent.com">
     <link href="../css/test.css" rel="stylesheet">
     <title>Test Site</title>
   </head>
@@ -30,5 +32,19 @@
          <input type="submit" value="Upload a file"/>
       </form>
     </section>
+
+    <h2>Google Auth test <span id="greeting"></span></h2>
+
+    <p>Press the button below to sign in:</p>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <p><a href="#" onclick="signOut();">Sign out</a></p>
+
+    <p>Below is the response from the server API: <button onclick="callServer()">refresh</button>
+      <pre id="server-response" style="border: 1px dashed black; min-width: 10em; min-height: 1em; padding: .5em;"></pre>
+
+
+
+
+
   </body>
 </html>

@@ -20,17 +20,24 @@ const app = express();
 const con = mysql.createConnection(config.mysql);
 const GoogleAuth = require('simple-google-openid');
 
-/* Requires a GOOGLE_CLIENT_ID
-app.use(GoogleAuth(process.env.GOOGLE_CLIENT_ID));
-app.use('/api', GoogleAuth.guardMiddleware());
-*/
 
+app.use(GoogleAuth("431475853768-3vv33qi2jtsjsmvppbl0kmgnkjdtqfsp.apps.googleusercontent.com"));
+app.use('/login', GoogleAuth.guardMiddleware());
+
+/*
 con.connect(function(err) {
   if (err) throw err;
   console.log("Database connected succesfully")
 });
-
+*/
 //app.get('/', (req, res) => res.send('Hello World!'));
+
+
+app.get('/login', (req, res) => {
+  res.send('Hello ' + (req.user.displayName || 'user without a name') + '!');
+
+  console.log('successful authenticated request by ' + req.user.emails[0].value);
+});
 
 app.use(express.static("public"));
 app.use(express.static("public/pages"));
