@@ -34,8 +34,8 @@ body{
   margin-bottom: 20%;
   margin-left: 40%;
   margin-right: 60%;
-} 
- 
+}
+
 
 .ulNavigation {
 
@@ -73,3 +73,15 @@ body{
   font-size: 130%
 
 }
+
+.content {
+  display: flex;
+}
+
+.content img {
+  margin-right: 10px;
+  display: block;
+}
+
+.content h3,
+.content p {margin: 0;}
